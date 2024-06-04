@@ -6,8 +6,47 @@
     <title>Document</title>
 </head>
 <body>
-    <div>บังกินหมูไม่ได้</div>
+    <div id="app2">
+
+    	เดือนกับปีที่เกิด : {{month + ' / ' + year}} <br>
+
+    	ปี พ.ศ. ปัจจุบัน : {{thisYear}} <br>
+
+    	อายุ :   {{age()}} ปี
+
+    </div>
 
 
+<script>
+
+	Vue.createApp({
+
+    	data() {
+
+        	return {
+
+            	month   	: '09',
+
+            	year    	: '2549',
+
+            	thisYear	: new Date().getFullYear() + 543
+
+        	}
+
+    	},
+
+     	methods : {
+
+        	age() {
+
+            	return this.thisYear - this.year
+
+        	}
+
+    	}
+
+	}).mount('#app2');
+
+</script>
 </body>
 </html>
